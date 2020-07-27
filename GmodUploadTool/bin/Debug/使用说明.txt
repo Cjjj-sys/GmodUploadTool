@@ -1,0 +1,4 @@
+使用前请将：
+gmpublish.exe
+steam_api.dll
+移动到C盘根目录下。
