@@ -43,14 +43,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="GmodUploadTool.exe" size="673728">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="GmodUploadTool.exe" size="697792">
       <assemblyIdentity name="GmodUploadTool" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>yz1LSilKghV9HV2DUpotq5A0KODmtggWJTJndQ1wP3U=</dsig:DigestValue>
+        <dsig:DigestValue>zwmLSHxbldq4/XJISKdhvWIfyJRr4213Ts3a+h1Arfo=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
