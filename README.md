@@ -9,17 +9,17 @@ Gmod创意工坊上传器GUI
 
 使用软件:Visual Studio 2019 
 
-使用语言：C# [.NET Framework] 
+使用语言：C# [.NET Framework 4.7.2] 
 
 使用模板：Windows窗体应用 
 
 查看帮助：[百度搜索] 
 
-使用资源：[gmpublish.exe],[steam_api.dll] 
+使用资源：[gmpublish.exe],[gmad.exe],[steam_api.dll] 
 
 
 
-本程序仅仅只是把[gmpublish.exe]套上一个极为简单的GUI界面
+本程序仅仅只是把[gmpublish.exe] 与 [gmad.exe]套上一个极为简单的GUI界面
 
 
 
