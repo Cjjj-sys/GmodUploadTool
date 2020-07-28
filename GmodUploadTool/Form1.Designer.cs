@@ -41,6 +41,7 @@
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.button5 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // textBox1
@@ -77,6 +78,7 @@
             this.textBox2.Location = new System.Drawing.Point(30, 203);
             this.textBox2.Multiline = true;
             this.textBox2.Name = "textBox2";
+            this.textBox2.ReadOnly = true;
             this.textBox2.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.textBox2.Size = new System.Drawing.Size(661, 209);
             this.textBox2.TabIndex = 3;
@@ -157,11 +159,22 @@
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(701, 40);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(100, 371);
+            this.button6.TabIndex = 12;
+            this.button6.Text = "GMA文件制作";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.button6);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.textBox4);
@@ -200,6 +213,7 @@
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button button6;
     }
 }
 
