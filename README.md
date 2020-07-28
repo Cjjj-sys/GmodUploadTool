@@ -1,5 +1,10 @@
 # GmodUploadTool
-Gmod创意工坊上传器GUI
+Gmod创意工坊上传器GUI 
+基本上传功能[√] 
+错误提醒功能[√] 
+等待提示功能[√] 
+Gma文件制作[√] 
+Addon.json生成[√] 
 
 作者QQ:2646381627
 
