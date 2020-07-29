@@ -1,3 +1,4 @@
+[![GitHub version](https://badge.fury.io/gh/Cjjj-sys%2FGmodUploadTool.svg)](https://badge.fury.io/gh/Cjjj-sys%2FGmodUploadTool)
 # GmodUploadTool
 Gmod创意工坊上传器GUI 
 基本上传功能[√] 
