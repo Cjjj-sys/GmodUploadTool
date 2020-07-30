@@ -89,25 +89,5 @@ namespace GmodUploadTool.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
-        
-        /// <summary>
-        ///   查找 System.Byte[] 类型的本地化资源。
-        /// </summary>
-        internal static byte[] gmpublish {
-            get {
-                object obj = ResourceManager.GetObject("gmpublish", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   查找 System.Byte[] 类型的本地化资源。
-        /// </summary>
-        internal static byte[] steam_api {
-            get {
-                object obj = ResourceManager.GetObject("steam_api", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
     }
 }

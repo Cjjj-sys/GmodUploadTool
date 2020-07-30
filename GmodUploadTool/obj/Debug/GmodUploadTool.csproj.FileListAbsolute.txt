@@ -55,6 +55,5 @@ C:\Users\FatPigs\source\repos\GmodUploadTool\GmodUploadTool\obj\Debug\GmodUpload
 C:\Users\FatPigs\source\repos\GmodUploadTool\GmodUploadTool\obj\Debug\GmodUploadTool.application
 C:\Users\FatPigs\source\repos\GmodUploadTool\GmodUploadTool\obj\Debug\GmodUploadTool.exe
 C:\Users\FatPigs\source\repos\GmodUploadTool\GmodUploadTool\obj\Debug\GmodUploadTool.pdb
-C:\Users\FatPigs\source\repos\GmodUploadTool\GmodUploadTool\obj\Debug\GmodUploadTool.csprojAssemblyReference.cache
 C:\Users\FatPigs\source\repos\GmodUploadTool\GmodUploadTool\obj\Debug\GmodUploadTool.Form7.resources
 C:\Users\FatPigs\source\repos\GmodUploadTool\GmodUploadTool\obj\Debug\GmodUploadTool.Form8.resources
