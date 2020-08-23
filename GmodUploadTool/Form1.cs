@@ -88,6 +88,7 @@ namespace GmodUploadTool
             {
                 Form3 warn = new Form3();
                 warn.ShowDialog();
+                Form3.skinEngine1.SkinFile = Application.StartupPath + "//" + Program.Skinname + ".ssk";
             }
             waitthread.Abort();
 
@@ -198,6 +199,7 @@ namespace GmodUploadTool
             {
                 Form4 warn = new Form4();
                 warn.ShowDialog();
+                Form4.skinEngine1.SkinFile = Application.StartupPath + "//" + Program.Skinname + ".ssk";
             }
 
 
@@ -207,6 +209,8 @@ namespace GmodUploadTool
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            skinEngine1 = new Sunisoft.IrisSkin.SkinEngine(((System.ComponentModel.Component)(this)));
+            skinEngine1.SkinFile = Application.StartupPath + "//" + Program.Skinname + ".ssk";
 
         }
 
@@ -214,6 +218,7 @@ namespace GmodUploadTool
         {
             Form2 about = new Form2();
             about.ShowDialog();
+            Form2.skinEngine1.SkinFile = Application.StartupPath + "//" + Program.Skinname + ".ssk";
         }
 
         private void process1_Exited(object sender, EventArgs e)
@@ -225,6 +230,19 @@ namespace GmodUploadTool
         {
             Form5 form5 = new Form5();
             form5.ShowDialog();
+            Form5.skinEngine1.SkinFile = Application.StartupPath + "//" + Program.Skinname + ".ssk";
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+
+
+        }
+
+        private void button7_Click_1(object sender, EventArgs e)
+        {
+            SkinChange skinChange = new SkinChange();
+            skinChange.ShowDialog();
         }
     }
 }

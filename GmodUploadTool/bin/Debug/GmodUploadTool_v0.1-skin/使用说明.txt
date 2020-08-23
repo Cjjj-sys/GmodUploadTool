@@ -1,0 +1,6 @@
+确保程序根目录有“gmpublish.exe”,“gmad.exe”和“steam_api.dll”三个文件
+
+[更新换肤功能]
+
+下一步目标：
+		未明确

@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
+            skinEngine1 = new Sunisoft.IrisSkin.SkinEngine();
             this.SuspendLayout();
             // 
             // label1
@@ -41,6 +42,15 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "文件(GMA) 或 图标(JPEG) 不能为空！！！";
             this.label1.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // skinEngine1
+            // 
+            skinEngine1.@__DrawButtonFocusRectangle = true;
+            skinEngine1.DisabledButtonTextColor = System.Drawing.Color.Gray;
+            skinEngine1.DisabledMenuFontColor = System.Drawing.SystemColors.GrayText;
+            skinEngine1.InactiveCaptionColor = System.Drawing.SystemColors.InactiveCaptionText;
+            skinEngine1.SerialNumber = "";
+            skinEngine1.SkinFile = null;
             // 
             // Form3
             // 
@@ -63,5 +73,6 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
+        public static Sunisoft.IrisSkin.SkinEngine skinEngine1;
     }
 }

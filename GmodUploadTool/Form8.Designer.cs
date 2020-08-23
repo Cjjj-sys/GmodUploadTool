@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
+            skinEngine1 = new Sunisoft.IrisSkin.SkinEngine();
             this.SuspendLayout();
             // 
             // label1
@@ -41,6 +42,15 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "生成 成功 ！！！";
             // 
+            // skinEngine1
+            // 
+            skinEngine1.@__DrawButtonFocusRectangle = true;
+            skinEngine1.DisabledButtonTextColor = System.Drawing.Color.Gray;
+            skinEngine1.DisabledMenuFontColor = System.Drawing.SystemColors.GrayText;
+            skinEngine1.InactiveCaptionColor = System.Drawing.SystemColors.InactiveCaptionText;
+            skinEngine1.SerialNumber = "";
+            skinEngine1.SkinFile = null;
+            // 
             // Form8
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -51,6 +61,7 @@
             this.Name = "Form8";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "提示";
+            this.Load += new System.EventHandler(this.Form8_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -59,5 +70,6 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
+        public static Sunisoft.IrisSkin.SkinEngine skinEngine1;
     }
 }

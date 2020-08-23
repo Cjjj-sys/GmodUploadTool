@@ -58,6 +58,7 @@
             this.button7 = new System.Windows.Forms.Button();
             this.textBox10 = new System.Windows.Forms.TextBox();
             this.textBox11 = new System.Windows.Forms.TextBox();
+            skinEngine1 = new Sunisoft.IrisSkin.SkinEngine();
             this.SuspendLayout();
             // 
             // textBox1
@@ -343,6 +344,15 @@
             this.textBox11.TabIndex = 28;
             this.textBox11.Text = "填写规范：\"*.扩展名\",\"*.扩展名\"\r\n示例：\"*.psd\",\"*.vcproj\",\"*.svn*\"\r\n注意！！！两项之间需加 , <逗号>";
             // 
+            // skinEngine1
+            // 
+            skinEngine1.@__DrawButtonFocusRectangle = true;
+            skinEngine1.DisabledButtonTextColor = System.Drawing.Color.Gray;
+            skinEngine1.DisabledMenuFontColor = System.Drawing.SystemColors.GrayText;
+            skinEngine1.InactiveCaptionColor = System.Drawing.SystemColors.InactiveCaptionText;
+            skinEngine1.SerialNumber = "";
+            skinEngine1.SkinFile = null;
+            // 
             // Form5
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -419,5 +429,6 @@
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.TextBox textBox10;
         private System.Windows.Forms.TextBox textBox11;
+        public static Sunisoft.IrisSkin.SkinEngine skinEngine1;
     }
 }

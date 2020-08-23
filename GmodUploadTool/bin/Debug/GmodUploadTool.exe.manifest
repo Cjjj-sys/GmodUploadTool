@@ -43,14 +43,26 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="GmodUploadTool.exe" size="113600">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="GmodUploadTool.exe" size="118208">
       <assemblyIdentity name="GmodUploadTool" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>ge3BTvCLGIIIoKARiCRFqSihf1VvEHHi1P/lVb4tYUQ=</dsig:DigestValue>
+        <dsig:DigestValue>9hRmcf5SOjTp4dnPJe57nStfyc6bo0IIE/Gp+ph5gqY=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="IrisSkin4.dll" size="557056">
+      <assemblyIdentity name="IrisSkin4" version="2006.3.22.45" publicKeyToken="127BE25A6DB25E07" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>q/RZI8cNXEv5eAbNPyEErrYUJ7aMifVZhmV/MEiA3/k=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

@@ -72,6 +72,10 @@
     <SignManifests>true</SignManifests>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="IrisSkin4, Version=2006.3.22.45, Culture=neutral, PublicKeyToken=127be25a6db25e07, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\IrisSkin4.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -135,6 +139,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SkinChange.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SkinChange.Designer.cs">
+      <DependentUpon>SkinChange.cs</DependentUpon>
+    </Compile>
     <Compile Include="wait.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -175,6 +185,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="SkinChange.resx">
+      <DependentUpon>SkinChange.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="wait.resx">
       <DependentUpon>wait.cs</DependentUpon>
     </EmbeddedResource>

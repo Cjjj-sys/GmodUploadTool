@@ -28,7 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
+            skinEngine1 = new Sunisoft.IrisSkin.SkinEngine();
             this.SuspendLayout();
+            // 
+            // skinEngine1
+            // 
+            skinEngine1.@__DrawButtonFocusRectangle = true;
+            skinEngine1.DisabledButtonTextColor = System.Drawing.Color.Gray;
+            skinEngine1.DisabledMenuFontColor = System.Drawing.SystemColors.GrayText;
+            skinEngine1.InactiveCaptionColor = System.Drawing.SystemColors.InactiveCaptionText;
+            skinEngine1.SerialNumber = "";
+            skinEngine1.SkinFile = null;
             // 
             // Form2
             // 
@@ -48,5 +58,7 @@
         }
 
         #endregion
+
+        public static Sunisoft.IrisSkin.SkinEngine skinEngine1;
     }
 }

@@ -7,14 +7,14 @@
     <framework targetVersion="4.7.2" profile="Full" supportedRuntime="4.0.30319" />
   </compatibleFrameworks>
   <dependency>
-    <dependentAssembly dependencyType="install" codebase="GmodUploadTool.exe.manifest" size="3935">
+    <dependentAssembly dependencyType="install" codebase="GmodUploadTool.exe.manifest" size="4611">
       <assemblyIdentity name="GmodUploadTool.exe" version="1.0.0.2" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>nWWdPgQ5G0eOSK4X/hn4BzW7nOUBQ/FgjIdzSglH9r4=</dsig:DigestValue>
+        <dsig:DigestValue>AazEh2ltXidNqYSdVCQeXFVT2KLzbKDzkgV/HbYlxhQ=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

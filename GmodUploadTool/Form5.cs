@@ -20,7 +20,7 @@ namespace GmodUploadTool
             InitializeComponent();
         }
 
-                private static void waitthread1()
+        private static void waitthread1()
         {
             wait openwait = new wait();
             openwait.ShowDialog();
@@ -41,7 +41,8 @@ namespace GmodUploadTool
 
         private void Form5_Load(object sender, EventArgs e)
         {
-
+            skinEngine1 = new Sunisoft.IrisSkin.SkinEngine(((System.ComponentModel.Component)(this)));
+            skinEngine1.SkinFile = Application.StartupPath + "//" + Program.Skinname + ".ssk";
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -65,25 +66,25 @@ namespace GmodUploadTool
 
                 p.StandardInput.WriteLine("@echo off");
                 p.StandardInput.WriteLine("gmad.exe create -folder " + textBox2.Text + " -out " + textBox1.Text + "/" + textBox4.Text + ".gma"); //10秒后重启（C#中可不好做哦） 
-                                                                                                                       //获取CMD窗口的输出信息： 
+                                                                                                                                                 //获取CMD窗口的输出信息： 
                 p.StandardInput.WriteLine("exit");
                 string sOutput = p.StandardOutput.ReadToEnd();
                 textBox3.Text = sOutput;
                 textBox3.Text = textBox3.Text.Replace("Microsoft Windows [版本 6.3.9600]", "GMA文件制作器[Cmd输出]：");
                 textBox3.Text = textBox3.Text.Replace("(c) 2013 Microsoft Corporation。保留所有权利。", "程序根目录：");
                 textBox3.Text = textBox3.Text.Replace(">@echo off", "");
-                textBox3.Text = textBox3.Text.Replace("gmad.exe","Cmd命令：");
-                textBox3.Text = textBox3.Text.Replace("Garry's Mod Addon Creator 1.1","GMA文件制作器1.1[Garry's Mod Addon Creator 1.1]");
-                textBox3.Text = textBox3.Text.Replace("Looking in folder","正在进入目录：");
-                textBox3.Text = textBox3.Text.Replace("error: Couldn't find file",">>>错误!不能找到这个文件");
-                textBox3.Text = textBox3.Text.Replace("Not allowed by whitelist",">不被允许的文件<");
-                textBox3.Text = textBox3.Text.Replace("Filename contains captial letters",">文件名包含大写字母<");
-                textBox3.Text = textBox3.Text.Replace("File list verification failed",">>>错误!文件列表验证失败");
-                textBox3.Text = textBox3.Text.Replace("Writing file list...","写入文件列表中...");
-                textBox3.Text = textBox3.Text.Replace("Writing files...","写入文件中...");
-                textBox3.Text = textBox3.Text.Replace("Writing the .gma...","写入GMA文件中...");
-                textBox3.Text = textBox3.Text.Replace("Successfully saved to",">>>制作成功！文件被保存在：");
-                textBox3.Text = textBox3.Text.Replace("error: Couldn't parse json",">>>错误!无法解析json文件！请检查文件内容，查看是否有语法错误。");
+                textBox3.Text = textBox3.Text.Replace("gmad.exe", "Cmd命令：");
+                textBox3.Text = textBox3.Text.Replace("Garry's Mod Addon Creator 1.1", "GMA文件制作器1.1[Garry's Mod Addon Creator 1.1]");
+                textBox3.Text = textBox3.Text.Replace("Looking in folder", "正在进入目录：");
+                textBox3.Text = textBox3.Text.Replace("error: Couldn't find file", ">>>错误!不能找到这个文件");
+                textBox3.Text = textBox3.Text.Replace("Not allowed by whitelist", ">不被允许的文件<");
+                textBox3.Text = textBox3.Text.Replace("Filename contains captial letters", ">文件名包含大写字母<");
+                textBox3.Text = textBox3.Text.Replace("File list verification failed", ">>>错误!文件列表验证失败");
+                textBox3.Text = textBox3.Text.Replace("Writing file list...", "写入文件列表中...");
+                textBox3.Text = textBox3.Text.Replace("Writing files...", "写入文件中...");
+                textBox3.Text = textBox3.Text.Replace("Writing the .gma...", "写入GMA文件中...");
+                textBox3.Text = textBox3.Text.Replace("Successfully saved to", ">>>制作成功！文件被保存在：");
+                textBox3.Text = textBox3.Text.Replace("error: Couldn't parse json", ">>>错误!无法解析json文件！请检查文件内容，查看是否有语法错误。");
                 //textBox3.Text = textBox3.Text.Replace("","");
                 //textBox3.Text = textBox3.Text.Replace("","");
                 //textBox3.Text = textBox3.Text.Replace("","");
@@ -100,12 +101,13 @@ namespace GmodUploadTool
                 //textBox3.Text = textBox3.Text.Replace("","");
                 //textBox3.Text = textBox3.Text.Replace("","");
                 //textBox3.Text = textBox3.Text.Replace("","");
-                textBox3.Text = textBox3.Text.Replace("exit","程序退出");
+                textBox3.Text = textBox3.Text.Replace("exit", "程序退出");
             }
             else
             {
                 Form6 warn = new Form6();
                 warn.ShowDialog();
+                Form6.skinEngine1.SkinFile = Application.StartupPath + "//" + Program.Skinname + ".ssk";
             }
             waitthread.Abort();
 
@@ -180,11 +182,13 @@ namespace GmodUploadTool
                 sw.Close();
                 Form8 form8 = new Form8();
                 form8.ShowDialog();
+                Form8.skinEngine1.SkinFile = Application.StartupPath + "//" + Program.Skinname + ".ssk";
             }
             else
             {
                 Form7 form7 = new Form7();
                 form7.ShowDialog();
+                Form7.skinEngine1.SkinFile = Application.StartupPath + "//" + Program.Skinname + ".ssk";
             }
         }
 

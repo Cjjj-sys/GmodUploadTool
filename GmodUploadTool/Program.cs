@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Threading;
+using System.IO;
 
 namespace GmodUploadTool
 {
@@ -18,6 +19,9 @@ namespace GmodUploadTool
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
+
         }
+        internal static string Skinname = "Page";
     }
 }
+

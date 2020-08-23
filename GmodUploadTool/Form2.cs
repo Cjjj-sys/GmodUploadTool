@@ -19,7 +19,8 @@ namespace GmodUploadTool
 
         private void Form2_Load(object sender, EventArgs e)
         {
-
+            skinEngine1 = new Sunisoft.IrisSkin.SkinEngine(((System.ComponentModel.Component)(this)));
+            skinEngine1.SkinFile = Application.StartupPath + "//" + Program.Skinname + ".ssk";
         }
     }
 }
