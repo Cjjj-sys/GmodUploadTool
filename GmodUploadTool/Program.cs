@@ -21,7 +21,6 @@ namespace GmodUploadTool
             Application.Run(new Form1());
 
         }
-        internal static string Skinname = "Page";
     }
 }
 

@@ -43,14 +43,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="GmodUploadTool.exe" size="118208">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="GmodUploadTool.exe" size="128448">
       <assemblyIdentity name="GmodUploadTool" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>9hRmcf5SOjTp4dnPJe57nStfyc6bo0IIE/Gp+ph5gqY=</dsig:DigestValue>
+        <dsig:DigestValue>3tyGlOmq9uR6nOqfUS+a+JtDPybQdvAtrnqe0V84oL4=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -63,6 +63,18 @@
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
         <dsig:DigestValue>q/RZI8cNXEv5eAbNPyEErrYUJ7aMifVZhmV/MEiA3/k=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="MetroSet UI.dll" size="466432">
+      <assemblyIdentity name="MetroSet UI" version="1.0.5.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>A331fKWOkTu8zI+g1xaaNIKDAOJaEU4wBNsJvjsTu6s=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

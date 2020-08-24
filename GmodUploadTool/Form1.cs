@@ -2,10 +2,12 @@
 using System.Diagnostics;
 using System.Threading;
 using System.Windows.Forms;
+using MetroSet_UI;
+using MetroSet_UI.Forms;
 
 namespace GmodUploadTool
 {
-    public partial class Form1 : Form
+    public partial class Form1 : MetroSetForm
     {
 
         public Form1()
@@ -21,18 +23,79 @@ namespace GmodUploadTool
 
         private void button1_Click(object sender, EventArgs e)
         {
-            OpenFileDialog openFileDialog1 = new OpenFileDialog();
-            openFileDialog1.Filter = "Gma文件|*.gma";
-            if (openFileDialog1.ShowDialog() == DialogResult.OK)
-            {
-                if (openFileDialog1.FileName != "")
-                {
-                    this.textBox1.Text = openFileDialog1.FileName;
-                }
-            }
+
         }
 
         private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox4_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            //skinEngine1 = new Sunisoft.IrisSkin.SkinEngine(((System.ComponentModel.Component)(this)));
+            //skinEngine1.SkinFile = Application.StartupPath + "//" + Program.Skinname + ".ssk";
+
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void process1_Exited(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+
+
+        }
+
+        private void metroSetButton1_Click(object sender, EventArgs e)
         {
             Process p = new Process();
             p.StartInfo.FileName = "cmd.exe";//要执行的程序名称 
@@ -86,54 +149,13 @@ namespace GmodUploadTool
             }
             else
             {
-                Form3 warn = new Form3();
-                warn.ShowDialog();
-                Form3.skinEngine1.SkinFile = Application.StartupPath + "//" + Program.Skinname + ".ssk";
+                MessageBox.Show("文件(GMA) 或 图标(JPEG) 不能为空！！！", "！！！错误！！！", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             waitthread.Abort();
 
         }
 
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox3_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            OpenFileDialog openFileDialog2 = new OpenFileDialog();
-            openFileDialog2.Filter = "jpg文件|*.jpg";
-            if (openFileDialog2.ShowDialog() == DialogResult.OK)
-            {
-                if (openFileDialog2.FileName != "")
-                {
-                    this.textBox3.Text = openFileDialog2.FileName;
-                }
-            }
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox4_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button4_Click(object sender, EventArgs e)
+        private void metroSetButton2_Click(object sender, EventArgs e)
         {
             Process p = new Process();
             p.StartInfo.FileName = "cmd.exe";//要执行的程序名称 
@@ -197,9 +219,7 @@ namespace GmodUploadTool
             }
             else
             {
-                Form4 warn = new Form4();
-                warn.ShowDialog();
-                Form4.skinEngine1.SkinFile = Application.StartupPath + "//" + Program.Skinname + ".ssk";
+                MessageBox.Show("文件(GMA) , 图标(JPEG) 或 文件创意工坊ID 不能为空！！！", "！！！错误！！！", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
 
@@ -207,42 +227,57 @@ namespace GmodUploadTool
 
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void metroSetButton3_Click(object sender, EventArgs e)
         {
-            skinEngine1 = new Sunisoft.IrisSkin.SkinEngine(((System.ComponentModel.Component)(this)));
-            skinEngine1.SkinFile = Application.StartupPath + "//" + Program.Skinname + ".ssk";
-
+            OpenFileDialog openFileDialog2 = new OpenFileDialog();
+            openFileDialog2.Filter = "jpg文件|*.jpg";
+            if (openFileDialog2.ShowDialog() == DialogResult.OK)
+            {
+                if (openFileDialog2.FileName != "")
+                {
+                    this.textBox3.Text = openFileDialog2.FileName;
+                }
+            }
         }
 
-        private void button5_Click(object sender, EventArgs e)
+        private void metroSetButton4_Click(object sender, EventArgs e)
         {
             Form2 about = new Form2();
             about.ShowDialog();
-            Form2.skinEngine1.SkinFile = Application.StartupPath + "//" + Program.Skinname + ".ssk";
         }
 
-        private void process1_Exited(object sender, EventArgs e)
+        private void metroSetButton5_Click(object sender, EventArgs e)
         {
-
+            System.Environment.Exit(0);
         }
 
-        private void button6_Click(object sender, EventArgs e)
+        private void metroSetButton6_Click(object sender, EventArgs e)
         {
             Form5 form5 = new Form5();
             form5.ShowDialog();
-            Form5.skinEngine1.SkinFile = Application.StartupPath + "//" + Program.Skinname + ".ssk";
         }
 
-        private void button7_Click(object sender, EventArgs e)
+        private void metroSetButton7_Click(object sender, EventArgs e)
         {
-
-
+            OpenFileDialog openFileDialog1 = new OpenFileDialog();
+            openFileDialog1.Filter = "Gma文件|*.gma";
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                if (openFileDialog1.FileName != "")
+                {
+                    this.textBox1.Text = openFileDialog1.FileName;
+                }
+            }
         }
 
-        private void button7_Click_1(object sender, EventArgs e)
+        private void metroSetButton8_Click(object sender, EventArgs e)
         {
-            SkinChange skinChange = new SkinChange();
-            skinChange.ShowDialog();
+            Style = MetroSet_UI.Design.Style.Dark;
+        }
+
+        private void metroSetButton9_Click(object sender, EventArgs e)
+        {
+            Style = MetroSet_UI.Design.Style.Light;
         }
     }
 }

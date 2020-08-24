@@ -7,10 +7,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MetroSet_UI;
+using MetroSet_UI.Forms;
 
 namespace GmodUploadTool
 {
-    public partial class Form2 : Form
+    public partial class Form2 : MetroSetForm
     {
         public Form2()
         {
@@ -19,8 +21,16 @@ namespace GmodUploadTool
 
         private void Form2_Load(object sender, EventArgs e)
         {
-            skinEngine1 = new Sunisoft.IrisSkin.SkinEngine(((System.ComponentModel.Component)(this)));
-            skinEngine1.SkinFile = Application.StartupPath + "//" + Program.Skinname + ".ssk";
+        }
+
+        private void metroSetLabel3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void metroSetButton1_Click(object sender, EventArgs e)
+        {
+           this.Close();
         }
     }
 }
