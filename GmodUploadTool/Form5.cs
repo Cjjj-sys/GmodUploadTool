@@ -220,8 +220,59 @@ namespace GmodUploadTool
 
         }
 
-        private void metroSetButton8_Click(object sender, EventArgs e)
+        private async void metroSetButton8_Click(object sender, EventArgs e)
         {
+            textBox3.Text = "";
+            ThreadStart waitsteart = new ThreadStart(waitthread1);
+            var waitthread = new Thread(waitthread1);
+            waitthread.IsBackground = true;
+            waitthread.Start();
+            if (textBox2.Text != "" && textBox1.Text != "" && textBox4.Text != "")
+            {
+                await Task.Factory.StartNew(() =>
+                {
+                    startProgram("gmad.exe", "create -folder " + textBox2.Text + " -out " + textBox1.Text + "/" + textBox4.Text + ".gma");
+                    TxtBoxOutput("执行完毕");
+                });
+                textBox3.Text = textBox3.Text.Replace("Microsoft Windows [版本 6.3.9600]", "GMA文件制作器[Cmd输出]：");
+                textBox3.Text = textBox3.Text.Replace("(c) 2013 Microsoft Corporation。保留所有权利。", "程序根目录：");
+                textBox3.Text = textBox3.Text.Replace(">@echo off", "");
+                textBox3.Text = textBox3.Text.Replace("gmad.exe", "Cmd命令：");
+                textBox3.Text = textBox3.Text.Replace("Garry's Mod Addon Creator 1.1", "GMA文件制作器1.1[Garry's Mod Addon Creator 1.1]");
+                textBox3.Text = textBox3.Text.Replace("Looking in folder", "正在进入目录：");
+                textBox3.Text = textBox3.Text.Replace("error: Couldn't find file", ">>>错误!不能找到这个文件");
+                textBox3.Text = textBox3.Text.Replace("Not allowed by whitelist", ">不被允许的文件<");
+                textBox3.Text = textBox3.Text.Replace("Filename contains captial letters", ">文件名包含大写字母<");
+                textBox3.Text = textBox3.Text.Replace("File list verification failed", ">>>错误!文件列表验证失败");
+                textBox3.Text = textBox3.Text.Replace("Writing file list...", "写入文件列表中...");
+                textBox3.Text = textBox3.Text.Replace("Writing files...", "写入文件中...");
+                textBox3.Text = textBox3.Text.Replace("Writing the .gma...", "写入GMA文件中...");
+                textBox3.Text = textBox3.Text.Replace("Successfully saved to", ">>>制作成功！文件被保存在：");
+                textBox3.Text = textBox3.Text.Replace("error: Couldn't parse json", ">>>错误!无法解析json文件！请检查文件内容，查看是否有语法错误。");
+                //textBox3.Text = textBox3.Text.Replace("","");
+                //textBox3.Text = textBox3.Text.Replace("","");
+                //textBox3.Text = textBox3.Text.Replace("","");
+                //textBox3.Text = textBox3.Text.Replace("","");
+                //textBox3.Text = textBox3.Text.Replace("","");
+                //textBox3.Text = textBox3.Text.Replace("","");
+                //textBox3.Text = textBox3.Text.Replace("","");
+                //textBox3.Text = textBox3.Text.Replace("","");
+                //textBox3.Text = textBox3.Text.Replace("","");
+                //textBox3.Text = textBox3.Text.Replace("","");
+                //textBox3.Text = textBox3.Text.Replace("","");
+                //textBox3.Text = textBox3.Text.Replace("","");
+                //textBox3.Text = textBox3.Text.Replace("","");
+                //textBox3.Text = textBox3.Text.Replace("","");
+                //textBox3.Text = textBox3.Text.Replace("","");
+                //textBox3.Text = textBox3.Text.Replace("","");
+                textBox3.Text = textBox3.Text.Replace("exit", "程序退出");
+            }
+            else
+            {
+                MessageBox.Show("插件目录，输出目录 或 GMA文件名 不能为空！！！", "！！！错误！！！", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            waitthread.Abort();
+            /**
 
             Process p = new Process();
             p.StartInfo.FileName = "cmd.exe";//要执行的程序名称 
@@ -283,7 +334,50 @@ namespace GmodUploadTool
                 MessageBox.Show("插件目录，输出目录 或 GMA文件名 不能为空！！！", "！！！错误！！！", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             waitthread.Abort();
+            **/
 
+        }
+        private void startProgram(string filename, string commandLine)
+        {
+            var fileName = filename;
+            var arguments = commandLine;
+
+            var info = new ProcessStartInfo();
+            info.FileName = fileName;
+            info.Arguments = arguments;
+
+            info.UseShellExecute = false;
+            info.RedirectStandardOutput = true;
+            info.RedirectStandardError = true;
+            info.CreateNoWindow = true;
+
+            using (var p = new Process())
+            {
+                p.StartInfo = info;
+                p.EnableRaisingEvents = true;
+
+                p.OutputDataReceived += (s, o) =>
+                {
+                    TxtBoxOutput(o.Data);
+                };
+                p.ErrorDataReceived += (s, o) =>
+                {
+                    TxtBoxOutput(o.Data);
+                };
+                p.Start();
+                p.BeginOutputReadLine();
+                p.BeginErrorReadLine();
+                p.WaitForExit();
+            }
+        }
+
+        public void TxtBoxOutput(string text)
+        {
+            BeginInvoke(new Action(delegate ()
+            {
+                textBox3.AppendText(text + Environment.NewLine);
+                //textBox3.ScrollToCaret();
+            }));
         }
     }
 }

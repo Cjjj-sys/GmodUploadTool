@@ -4,6 +4,14 @@ using System.Threading;
 using System.Windows.Forms;
 using MetroSet_UI;
 using MetroSet_UI.Forms;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.IO;
 
 namespace GmodUploadTool
 {
@@ -73,6 +81,11 @@ namespace GmodUploadTool
             //skinEngine1.SkinFile = Application.StartupPath + "//" + Program.Skinname + ".ssk";
 
         }
+        
+        private void Form_Closing(object sender, EventArgs e)
+        {
+
+        }
 
         private void button5_Click(object sender, EventArgs e)
         {
@@ -95,8 +108,54 @@ namespace GmodUploadTool
 
         }
 
-        private void metroSetButton1_Click(object sender, EventArgs e)
+        private async void metroSetButton1_Click(object sender, EventArgs e)
         {
+            textBox2.Text = "";
+            ThreadStart waitsteart = new ThreadStart(waitthread1);
+            var waitthread = new Thread(waitthread1);
+            waitthread.IsBackground = true;
+            waitthread.Start();
+            if (textBox1.Text != "" && textBox3.Text != "")
+            {
+                await Task.Factory.StartNew(() =>
+                {
+                    startProgram("gmpublish.exe", "create -addon " + textBox1.Text + " -icon " + textBox3.Text);
+                    TxtBoxOutput("执行完毕");
+                });
+                textBox2.Text = textBox2.Text.Replace("Microsoft Windows [版本 6.3.9600]", "Gmod创意工坊上传器[Cmd输出]：");
+                textBox2.Text = textBox2.Text.Replace("(c) 2013 Microsoft Corporation。保留所有权利。", "程序根目录：");
+                textBox2.Text = textBox2.Text.Replace(">@echo off", "");
+                textBox2.Text = textBox2.Text.Replace("gmpublish.exe", "Cmd命令：");
+                textBox2.Text = textBox2.Text.Replace("Garry's Mod Workshop Publisher 1.2", "Gmod创意工坊上传器1.2[Garry's Mod Workshop Publisher 1.2]");
+                textBox2.Text = textBox2.Text.Replace("[Compiled May  8 2020 - 14:31:20]", "[编译时间：2020年8月8日14:31:20]");
+                textBox2.Text = textBox2.Text.Replace("Beginning creation process...", "开始创建流程中...");
+                textBox2.Text = textBox2.Text.Replace("Preparing Icon File...", "准备图标文件...");
+                textBox2.Text = textBox2.Text.Replace("Couldn't open the icon!", ">>>错误：无法打开图标文件");
+                textBox2.Text = textBox2.Text.Replace("Preparing Addon File...", "准备插件文件...");
+                textBox2.Text = textBox2.Text.Replace("Requesting a new Workshop Item ID...", "获取一个新的创意工坊物品ID...");
+                textBox2.Text = textBox2.Text.Replace("Success! Your new item ID is", ">>>获取成功！你的新物品ID为");
+                textBox2.Text = textBox2.Text.Replace("Starting Update...", "开始上传物品中...");
+                textBox2.Text = textBox2.Text.Replace("Updating title...", "上传标题中...");
+                textBox2.Text = textBox2.Text.Replace("Updating icon...", "准备上传图标中...");
+                textBox2.Text = textBox2.Text.Replace("Updating Tags...", "上传标签中...");
+                textBox2.Text = textBox2.Text.Replace("Updating Addon File...", "准备上传插件文件中...");
+                textBox2.Text = textBox2.Text.Replace("SetContentFile", ">>>已选中插件文件：");
+                textBox2.Text = textBox2.Text.Replace("Submitting update.. (this can take a long time)", "提交更新中... (这可能需要数分钟)");
+                textBox2.Text = textBox2.Text.Replace("Preparing config...", "准备配置文件中...");
+                textBox2.Text = textBox2.Text.Replace("Preparing content...", "准备物品中...");
+                textBox2.Text = textBox2.Text.Replace("Uploading content...", "上传物品中...");
+                textBox2.Text = textBox2.Text.Replace("Uploading icon...", "上传图标中...");
+                textBox2.Text = textBox2.Text.Replace("Success!", ">>>成功！！！");
+                textBox2.Text = textBox2.Text.Replace("Addon creation finished.", ">>>插件成功创建！！！");
+                textBox2.Text = textBox2.Text.Replace("Your new addon is currently marked as hidden, add some pictures and a description, then make it public!", "你的新物品当前被标记为隐藏，添加一些图片和说明，然后将其公开！");
+                textBox2.Text = textBox2.Text.Replace("It is located at", "创意工坊地址：");
+            }
+            else
+            {
+                MessageBox.Show("文件(GMA) 或 图标(JPEG) 不能为空！！！", "！！！错误！！！", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            waitthread.Abort();
+            /**
             Process p = new Process();
             p.StartInfo.FileName = "cmd.exe";//要执行的程序名称 
             p.StartInfo.UseShellExecute = false;
@@ -152,11 +211,70 @@ namespace GmodUploadTool
                 MessageBox.Show("文件(GMA) 或 图标(JPEG) 不能为空！！！", "！！！错误！！！", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             waitthread.Abort();
-
+            **/
         }
 
-        private void metroSetButton2_Click(object sender, EventArgs e)
+        private async void metroSetButton2_Click(object sender, EventArgs e)
         {
+            textBox2.Text = "";
+            ThreadStart waitsteart = new ThreadStart(waitthread1);
+            var waitthread = new Thread(waitthread1);
+            waitthread.IsBackground = true;
+            waitthread.Start();
+            if (textBox1.Text != "" && textBox3.Text != "" && textBox4.Text != "")
+            {
+                await Task.Factory.StartNew(() =>
+                {
+                    startProgram("gmpublish.exe", "update -addon " + textBox1.Text + " -icon " + textBox3.Text + " -id " + textBox4.Text);
+                    TxtBoxOutput("执行完毕");
+                });
+                textBox2.Text = textBox2.Text.Replace("Microsoft Windows [版本 6.3.9600]", "Gmod创意工坊上传器[Cmd输出]：");
+                textBox2.Text = textBox2.Text.Replace("(c) 2013 Microsoft Corporation。保留所有权利。", "程序根目录：");
+                textBox2.Text = textBox2.Text.Replace(">@echo off", "");
+                textBox2.Text = textBox2.Text.Replace("gmpublish.exe", "Cmd命令：");
+                textBox2.Text = textBox2.Text.Replace("Garry's Mod Workshop Publisher 1.2", "Gmod创意工坊上传器1.2[Garry's Mod Workshop Publisher 1.2]");
+                textBox2.Text = textBox2.Text.Replace("[Compiled May  8 2020 - 14:31:20]", "[编译时间：2020年8月8日14:31:20]");
+                textBox2.Text = textBox2.Text.Replace("Beginning creation process...", "开始创建流程中...");
+                textBox2.Text = textBox2.Text.Replace("Preparing Icon File...", "准备图标文件...");
+                textBox2.Text = textBox2.Text.Replace("Couldn't open the icon!", ">>>错误：无法打开图标文件");
+                textBox2.Text = textBox2.Text.Replace("Preparing Addon File...", "准备插件文件...");
+                textBox2.Text = textBox2.Text.Replace("Requesting a new Workshop Item ID...", "获取一个新的创意工坊物品ID...");
+                textBox2.Text = textBox2.Text.Replace("Success! Your new item ID is", ">>>获取成功！你的新物品ID为");
+                textBox2.Text = textBox2.Text.Replace("Starting Update...", "开始上传物品中...");
+                textBox2.Text = textBox2.Text.Replace("Updating title...", "上传标题中...");
+                textBox2.Text = textBox2.Text.Replace("Updating icon...", "准备上传图标中...");
+                textBox2.Text = textBox2.Text.Replace("Updating Tags...", "上传标签中...");
+                textBox2.Text = textBox2.Text.Replace("Updating Addon File...", "准备上传插件文件中...");
+                textBox2.Text = textBox2.Text.Replace("SetContentFile", ">>>已选中插件文件：");
+                textBox2.Text = textBox2.Text.Replace("Submitting update.. (this can take a long time)", "提交更新中... (这可能需要数分钟)");
+                textBox2.Text = textBox2.Text.Replace("Preparing config...", "准备配置文件中...");
+                textBox2.Text = textBox2.Text.Replace("Preparing content...", "准备物品中...");
+                textBox2.Text = textBox2.Text.Replace("Uploading content...", "上传物品中...");
+                textBox2.Text = textBox2.Text.Replace("Uploading icon...", "上传图标中...");
+                textBox2.Text = textBox2.Text.Replace("Success!", ">>>成功！！！");
+                textBox2.Text = textBox2.Text.Replace("Addon creation finished.", ">>>插件成功创建！！！");
+                textBox2.Text = textBox2.Text.Replace("Your new addon is currently marked as hidden, add some pictures and a description, then make it public!", "你的新物品当前被标记为隐藏，添加一些图片和说明，然后将其公开！");
+                textBox2.Text = textBox2.Text.Replace("It is located at", "创意工坊地址：");
+                textBox2.Text = textBox2.Text.Replace("Beginning update process...", "开始创建更新线程...");
+                textBox2.Text = textBox2.Text.Replace("Can't edit workshop id ", ">>>错误：不能编辑物品ID：");
+                textBox2.Text = textBox2.Text.Replace("(are you the author?)", "(无法确认物品所有者)");
+                //textBox2.Text = textBox2.Text.Replace("","");
+                //textBox2.Text = textBox2.Text.Replace("","");
+                //textBox2.Text = textBox2.Text.Replace("","");
+                //textBox2.Text = textBox2.Text.Replace("","");
+                //textBox2.Text = textBox2.Text.Replace("","");
+                //textBox2.Text = textBox2.Text.Replace("","");
+                //textBox2.Text = textBox2.Text.Replace("","");
+                //textBox2.Text = textBox2.Text.Replace("","");
+                textBox2.Text = textBox2.Text.Replace("exit", "程序退出");
+            }
+            else
+            {
+                MessageBox.Show("文件(GMA) , 图标(JPEG) 或 文件创意工坊ID 不能为空！！！", "！！！错误！！！", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            waitthread.Abort();
+            
+            /**
             Process p = new Process();
             p.StartInfo.FileName = "cmd.exe";//要执行的程序名称 
             p.StartInfo.UseShellExecute = false;
@@ -224,7 +342,7 @@ namespace GmodUploadTool
 
 
             waitthread.Abort();
-
+            **/
         }
 
         private void metroSetButton3_Click(object sender, EventArgs e)
@@ -248,7 +366,14 @@ namespace GmodUploadTool
 
         private void metroSetButton5_Click(object sender, EventArgs e)
         {
+            File.Delete("gmpublish.exe");
+            File.Delete("gmad.exe");
+            File.Delete("steam_api.dll");
+
+
             System.Environment.Exit(0);
+
+            //File.Delete("MetroSet UI.dll");
         }
 
         private void metroSetButton6_Click(object sender, EventArgs e)
@@ -279,5 +404,53 @@ namespace GmodUploadTool
         {
             Style = MetroSet_UI.Design.Style.Light;
         }
+
+        private void textBox2_TextChanged(object sender)
+        {
+
+        }
+        private void startProgram(string filename, string commandLine)
+        {
+            var fileName = filename;
+            var arguments = commandLine;
+
+            var info = new ProcessStartInfo();
+            info.FileName = fileName;
+            info.Arguments = arguments;
+
+            info.UseShellExecute = false;
+            info.RedirectStandardOutput = true;
+            info.RedirectStandardError = true;
+            info.CreateNoWindow = true;
+
+            using (var p = new Process())
+            {
+                p.StartInfo = info;
+                p.EnableRaisingEvents = true;
+
+                p.OutputDataReceived += (s, o) =>
+                {
+                    TxtBoxOutput(o.Data);
+                };
+                p.ErrorDataReceived += (s, o) =>
+                {
+                    TxtBoxOutput(o.Data);
+                };
+                p.Start();
+                p.BeginOutputReadLine();
+                p.BeginErrorReadLine();
+                p.WaitForExit();
+            }
+        }
+
+        public void TxtBoxOutput(string text)
+        {
+            BeginInvoke(new Action(delegate ()
+            {
+                textBox2.AppendText(text + Environment.NewLine);
+                //textBox2.ScrollToCaret();
+            }));
+        }
     }
 }
+

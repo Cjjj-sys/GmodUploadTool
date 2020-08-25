@@ -30,11 +30,11 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.metroSetButton1 = new MetroSet_UI.Controls.MetroSetButton();
+            this.styleManager1 = new MetroSet_UI.StyleManager();
             this.metroSetButton2 = new MetroSet_UI.Controls.MetroSetButton();
             this.textBox1 = new MetroSet_UI.Controls.MetroSetTextBox();
             this.textBox3 = new MetroSet_UI.Controls.MetroSetTextBox();
             this.metroSetButton3 = new MetroSet_UI.Controls.MetroSetButton();
-            this.styleManager1 = new MetroSet_UI.StyleManager();
             this.metroSetLabel1 = new MetroSet_UI.Controls.MetroSetLabel();
             this.metroSetButton4 = new MetroSet_UI.Controls.MetroSetButton();
             this.metroSetButton5 = new MetroSet_UI.Controls.MetroSetButton();
@@ -44,7 +44,7 @@
             this.metroSetLabel3 = new MetroSet_UI.Controls.MetroSetLabel();
             this.metroSetButton7 = new MetroSet_UI.Controls.MetroSetButton();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox2 = new MetroSet_UI.Controls.MetroSetRichTextBox();
+            textBox2 = new MetroSet_UI.Controls.MetroSetRichTextBox();
             this.SuspendLayout();
             // 
             // metroSetButton1
@@ -72,6 +72,14 @@
             this.metroSetButton1.ThemeAuthor = "Narwin";
             this.metroSetButton1.ThemeName = "MetroDark";
             this.metroSetButton1.Click += new System.EventHandler(this.metroSetButton1_Click);
+            // 
+            // styleManager1
+            // 
+            this.styleManager1.CustomTheme = "C:\\Users\\FatPigs\\AppData\\Roaming\\Microsoft\\Windows\\Templates\\ThemeFile.xml";
+            this.styleManager1.MetroForm = this;
+            this.styleManager1.Style = MetroSet_UI.Design.Style.Dark;
+            this.styleManager1.ThemeAuthor = "Narwin";
+            this.styleManager1.ThemeName = "MetroDark";
             // 
             // metroSetButton2
             // 
@@ -180,14 +188,6 @@
             this.metroSetButton3.ThemeAuthor = "Narwin";
             this.metroSetButton3.ThemeName = "MetroDark";
             this.metroSetButton3.Click += new System.EventHandler(this.metroSetButton3_Click);
-            // 
-            // styleManager1
-            // 
-            this.styleManager1.CustomTheme = "C:\\Users\\FatPigs\\AppData\\Roaming\\Microsoft\\Windows\\Templates\\ThemeFile.xml";
-            this.styleManager1.MetroForm = this;
-            this.styleManager1.Style = MetroSet_UI.Design.Style.Dark;
-            this.styleManager1.ThemeAuthor = "Narwin";
-            this.styleManager1.ThemeName = "MetroDark";
             // 
             // metroSetLabel1
             // 
@@ -374,32 +374,33 @@
             // 
             // textBox2
             // 
-            this.textBox2.AutoWordSelection = false;
-            this.textBox2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(110)))), ((int)(((byte)(110)))));
-            this.textBox2.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
-            this.textBox2.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.textBox2.DisabledForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.textBox2.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
-            this.textBox2.Lines = new string[] {
+            textBox2.AutoWordSelection = false;
+            textBox2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(110)))), ((int)(((byte)(110)))));
+            textBox2.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
+            textBox2.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            textBox2.DisabledForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            textBox2.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
+            textBox2.Lines = new string[] {
         " ",
         " ",
         " ",
         " ",
         " ",
         " "};
-            this.textBox2.Location = new System.Drawing.Point(10, 256);
-            this.textBox2.MaxLength = 32767;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(676, 199);
-            this.textBox2.Style = MetroSet_UI.Design.Style.Dark;
-            this.textBox2.StyleManager = this.styleManager1;
-            this.textBox2.TabIndex = 28;
-            this.textBox2.Text = " \n \n \n \n \n ";
-            this.textBox2.ThemeAuthor = "Narwin";
-            this.textBox2.ThemeName = "MetroDark";
-            this.textBox2.WordWrap = true;
+            textBox2.Location = new System.Drawing.Point(10, 256);
+            textBox2.MaxLength = 32767;
+            textBox2.Name = "textBox2";
+            textBox2.ReadOnly = true;
+            textBox2.Size = new System.Drawing.Size(676, 199);
+            textBox2.Style = MetroSet_UI.Design.Style.Dark;
+            textBox2.StyleManager = this.styleManager1;
+            textBox2.TabIndex = 28;
+            textBox2.Text = " \n \n \n \n \n ";
+            textBox2.ThemeAuthor = "Narwin";
+            textBox2.ThemeName = "MetroDark";
+            textBox2.WordWrap = true;
+            textBox2.TextChanged += new MetroSet_UI.Controls.MetroSetRichTextBox.TextChangedEventHandler(textBox2_TextChanged);
             // 
             // Form1
             // 
@@ -409,7 +410,7 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.ClientSize = new System.Drawing.Size(804, 460);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(textBox2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.metroSetButton7);
             this.Controls.Add(this.metroSetLabel3);
@@ -456,7 +457,7 @@
         private MetroSet_UI.Controls.MetroSetLabel metroSetLabel2;
         private MetroSet_UI.Controls.MetroSetButton metroSetButton7;
         private System.Windows.Forms.Label label1;
-        private MetroSet_UI.Controls.MetroSetRichTextBox textBox2;
+        public static MetroSet_UI.Controls.MetroSetRichTextBox textBox2;
     }
 }
 

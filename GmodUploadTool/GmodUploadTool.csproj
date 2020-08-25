@@ -112,6 +112,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SRE.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SRE.Designer.cs">
+      <DependentUpon>SRE.cs</DependentUpon>
+    </Compile>
     <Compile Include="wait.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -137,6 +143,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="SRE.resx">
+      <DependentUpon>SRE.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="wait.resx">
       <DependentUpon>wait.cs</DependentUpon>
     </EmbeddedResource>
@@ -160,10 +169,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="gmod9.ico" />
+    <EmbeddedResource Include="Resources\gmad.exe" />
+    <EmbeddedResource Include="Resources\MetroSet UI.dll" />
     <None Include="Resources\about12.png" />
     <None Include="Resources\about11.png" />
-    <None Include="Resources\steam_api.dll" />
-    <None Include="Resources\gmpublish.exe" />
+    <EmbeddedResource Include="Resources\steam_api.dll" />
+    <EmbeddedResource Include="Resources\gmpublish.exe" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
