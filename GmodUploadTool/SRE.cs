@@ -12,6 +12,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MetroSet_UI;
 using MetroSet_UI.Forms;
+using GUT_E;
 
 namespace GmodUploadTool
 {
@@ -65,6 +66,20 @@ namespace GmodUploadTool
                 if (outStream != null) outStream.Close();
                 if (inStream != null) inStream.Close();
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            File.Delete("gmpublish.exe");
+            File.Delete("gmad.exe");
+            File.Delete("steam_api.dll");
+            Application.Exit();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            GUT_E.MainWindow mainWindow = new GUT_E.MainWindow();
+            mainWindow.Show();
         }
     }
 }

@@ -66,7 +66,7 @@
             this.metroSetLabel2.Style = MetroSet_UI.Design.Style.Dark;
             this.metroSetLabel2.StyleManager = this.styleManager1;
             this.metroSetLabel2.TabIndex = 1;
-            this.metroSetLabel2.Text = "v0.2-Metro";
+            this.metroSetLabel2.Text = "v0.3-Metro";
             this.metroSetLabel2.ThemeAuthor = "Narwin";
             this.metroSetLabel2.ThemeName = "MetroDark";
             // 

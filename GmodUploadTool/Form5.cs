@@ -6,6 +6,7 @@ using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -115,7 +116,7 @@ namespace GmodUploadTool
         {
             FolderBrowserDialog fbd = new FolderBrowserDialog();
             fbd.ShowDialog();
-            textBox1.Text = fbd.SelectedPath;
+            textBox2.Text = fbd.SelectedPath;
         }
 
         private void metroSetScrollBar1_Scroll(object sender)
@@ -378,6 +379,114 @@ namespace GmodUploadTool
                 textBox3.AppendText(text + Environment.NewLine);
                 //textBox3.ScrollToCaret();
             }));
+        }
+
+        private void textBox2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void metroSetButton6_Click(object sender, EventArgs e)
+        {
+            FolderBrowserDialog fbd = new FolderBrowserDialog();
+            fbd.ShowDialog();
+            textBox1.Text = fbd.SelectedPath;
+        }
+
+        private void metroSetButton9_Click(object sender, EventArgs e)
+        {
+            IniFileGMA iniFileGMA = new IniFileGMA();
+            iniFileGMA.writeIni(savename5.Text, "AF", textBox2.Text);
+            iniFileGMA.writeIni(savename5.Text, "OF1", textBox1.Text);
+            iniFileGMA.writeIni(savename5.Text, "NAME", textBox4.Text);
+            iniFileGMA.writeIni(savename5.Text, "TITLE", textBox5.Text);
+            iniFileGMA.writeIni(savename5.Text, "TYPE", comboBox1.Text);
+            iniFileGMA.writeIni(savename5.Text, "TAG", textBox7.Text);
+            iniFileGMA.writeIni(savename5.Text, "IGNORE", textBox8.Text);
+            iniFileGMA.writeIni(savename5.Text, "OF2", textBox6.Text);
+        }
+        [DllImport("kernel32.dll", CharSet = CharSet.Auto)]
+
+        private static extern uint GetPrivateProfileSectionNames(IntPtr lpszReturnBuffer, uint nSize, string lpFileName);
+
+
+
+        public static string[] INIGetAllSectionNames(string iniFile)
+
+        {
+
+            uint MAX_BUFFER = 32767;    //默认为32767
+
+
+
+            string[] sections = new string[0];      //返回值
+
+
+
+            //申请内存
+
+            IntPtr pReturnedString = Marshal.AllocCoTaskMem((int)MAX_BUFFER * sizeof(char));
+
+            uint bytesReturned = GetPrivateProfileSectionNames(pReturnedString, MAX_BUFFER, iniFile);
+
+            if (bytesReturned != 0)
+
+            {
+
+                //读取指定内存的内容
+
+                string local = Marshal.PtrToStringAuto(pReturnedString, (int)bytesReturned).ToString();
+
+
+
+                //每个节点之间用\0分隔,末尾有一个\0
+
+                sections = local.Split(new char[] { '\0' }, StringSplitOptions.RemoveEmptyEntries);
+
+            }
+
+
+
+            //释放内存
+
+            Marshal.FreeCoTaskMem(pReturnedString);
+
+
+
+            return sections;
+
+        }
+
+        private void comboBox2_DropDown(object sender, EventArgs e)
+        {
+            comboBox2.Items.Clear();
+            string[] a = INIGetAllSectionNames("./savegma.ini");
+            comboBox2.Items.AddRange(a);
+        }
+
+        private void metroSetButton10_Click(object sender, EventArgs e)
+        {
+            IniFileGMA iniFileGMA = new IniFileGMA();
+            textBox2.Text = iniFileGMA.readIni(comboBox2.Text, "AF");
+            textBox1.Text = iniFileGMA.readIni(comboBox2.Text, "OF1");
+            textBox4.Text = iniFileGMA.readIni(comboBox2.Text, "NAME");
+            textBox5.Text = iniFileGMA.readIni(comboBox2.Text, "TITLE");
+            comboBox1.Text = iniFileGMA.readIni(comboBox2.Text, "TYPE");
+            textBox7.Text = iniFileGMA.readIni(comboBox2.Text, "TAG");
+            textBox8.Text = iniFileGMA.readIni(comboBox2.Text, "IGNORE");
+            textBox6.Text = iniFileGMA.readIni(comboBox2.Text, "OF2");
+        }
+
+        private void metroSetButton11_Click(object sender, EventArgs e)
+        {
+            DialogResult TS = MessageBox.Show("是否确认删除'" + comboBox2.Text + "'？", "删除？", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (TS == DialogResult.Yes)
+            {
+                IniFileGMA iniFileGMA = new IniFileGMA();
+                iniFileGMA.EraseSection(comboBox2.Text);
+                comboBox2.Text = "";
+            }
+            else;
         }
     }
 }

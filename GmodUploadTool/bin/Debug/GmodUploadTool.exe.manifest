@@ -43,14 +43,26 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="GmodUploadTool.exe" size="1533376">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="GmodUploadTool.exe" size="1545664">
       <assemblyIdentity name="GmodUploadTool" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>H36b/2X4u3n9efYRPoaL8LZfzEnBY3MOqDpecepxZII=</dsig:DigestValue>
+        <dsig:DigestValue>XBRBx0SkvKt/kYJNBar7r0j9OCCvVTuKwm0lwoBe1nU=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="GUT-E.dll" size="18432">
+      <assemblyIdentity name="GUT-E" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>1qGoKvg4Zy2UQNzoGwCjN9LNOLfqhIBLON4069ASeKA=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -87,13 +99,13 @@
       <dsig:DigestValue>Lq6HGH7GnX9F4h6aCBWzHMOgLZGzsd9VZDbJma8Tb6s=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="GmodUploadTool.exe.config" size="189">
+  <file name="GmodUploadTool.exe.config" size="538">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>R+Wg8QGvQVHX8T0ta/qbhH1bXkqY0fRnS3wBV3J0bN8=</dsig:DigestValue>
+      <dsig:DigestValue>fDg1aNq+V+i2vn4pBvil7IziFXPjAn1e0u3ZhIKs69U=</dsig:DigestValue>
     </hash>
   </file>
 </asmv1:assembly>

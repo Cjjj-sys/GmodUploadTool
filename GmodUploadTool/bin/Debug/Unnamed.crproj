@@ -1,0 +1,13 @@
+<project outputDir="C:\Users\FatPigs\source\repos\GmodUploadTool\GmodUploadTool\bin\Debug\Confused" baseDir="C:\Users\FatPigs\source\repos\GmodUploadTool\GmodUploadTool\bin\Debug" xmlns="http://confuser.codeplex.com">
+  <rule pattern="true" inherit="false" />
+  <packer id="compressor" />
+  <module path="GmodUploadTool.exe">
+    <rule pattern="true" inherit="false" />
+  </module>
+  <module path="GUT-E.dll">
+    <rule pattern="true" inherit="false" />
+  </module>
+  <module path="MetroSet UI.dll">
+    <rule pattern="true" inherit="false" />
+  </module>
+</project>

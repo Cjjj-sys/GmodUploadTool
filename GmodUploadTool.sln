@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
+# Blend for Visual Studio Version 16
 VisualStudioVersion = 16.0.30320.27
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GmodUploadTool", "GmodUploadTool\GmodUploadTool.csproj", "{3C0EE1AF-3FB7-449F-830E-8710E43C6452}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GUT-E", "GUT-E\GUT-E.csproj", "{66290D5F-6549-4A40-8A77-32ED1231D7D0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{3C0EE1AF-3FB7-449F-830E-8710E43C6452}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3C0EE1AF-3FB7-449F-830E-8710E43C6452}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3C0EE1AF-3FB7-449F-830E-8710E43C6452}.Release|Any CPU.Build.0 = Release|Any CPU
+		{66290D5F-6549-4A40-8A77-32ED1231D7D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{66290D5F-6549-4A40-8A77-32ED1231D7D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{66290D5F-6549-4A40-8A77-32ED1231D7D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{66290D5F-6549-4A40-8A77-32ED1231D7D0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

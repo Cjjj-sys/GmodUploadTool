@@ -12,6 +12,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.IO;
+using System.Runtime.InteropServices;
 
 namespace GmodUploadTool
 {
@@ -361,7 +362,7 @@ namespace GmodUploadTool
         private void metroSetButton4_Click(object sender, EventArgs e)
         {
             Form2 about = new Form2();
-            about.ShowDialog();
+            about.Show();
         }
 
         private void metroSetButton5_Click(object sender, EventArgs e)
@@ -379,7 +380,7 @@ namespace GmodUploadTool
         private void metroSetButton6_Click(object sender, EventArgs e)
         {
             Form5 form5 = new Form5();
-            form5.ShowDialog();
+            form5.Show();
         }
 
         private void metroSetButton7_Click(object sender, EventArgs e)
@@ -450,6 +451,93 @@ namespace GmodUploadTool
                 textBox2.AppendText(text + Environment.NewLine);
                 //textBox2.ScrollToCaret();
             }));
+        }
+
+        private void saveini_Click(object sender, EventArgs e)
+        {
+            IniFile iniFile = new IniFile();
+            iniFile.writeIni(inisavetext.Text, "GMA", textBox1.Text);
+            iniFile.writeIni(inisavetext.Text, "JPG", textBox3.Text);
+            iniFile.writeIni(inisavetext.Text, "ID", textBox4.Text);
+        }
+
+        [DllImport("kernel32.dll", CharSet = CharSet.Auto)]
+
+        private static extern uint GetPrivateProfileSectionNames(IntPtr lpszReturnBuffer, uint nSize, string lpFileName);
+
+
+
+        public static string[] INIGetAllSectionNames(string iniFile)
+
+        {
+
+            uint MAX_BUFFER = 32767;    //默认为32767
+
+
+
+            string[] sections = new string[0];      //返回值
+
+
+
+            //申请内存
+
+            IntPtr pReturnedString = Marshal.AllocCoTaskMem((int)MAX_BUFFER * sizeof(char));
+
+            uint bytesReturned = GetPrivateProfileSectionNames(pReturnedString, MAX_BUFFER, iniFile);
+
+            if (bytesReturned != 0)
+
+            {
+
+                //读取指定内存的内容
+
+                string local = Marshal.PtrToStringAuto(pReturnedString, (int)bytesReturned).ToString();
+
+
+
+                //每个节点之间用\0分隔,末尾有一个\0
+
+                sections = local.Split(new char[] { '\0' }, StringSplitOptions.RemoveEmptyEntries);
+
+            }
+
+
+
+            //释放内存
+
+            Marshal.FreeCoTaskMem(pReturnedString);
+
+
+
+            return sections;
+
+        }
+
+        private void comboBox1_DropDown(object sender, EventArgs e)
+        {
+            comboBox1.Items.Clear();
+            string[] a = INIGetAllSectionNames("./save.ini");
+            comboBox1.Items.AddRange(a);
+        }
+
+        private void readsave_Click(object sender, EventArgs e)
+        {
+            IniFile iniFile = new IniFile();
+            textBox1.Text= iniFile.readIni(comboBox1.Text, "GMA");
+            textBox3.Text= iniFile.readIni(comboBox1.Text, "JPG");
+            textBox4.Text= iniFile.readIni(comboBox1.Text, "ID");
+        }
+
+        private void metroSetButton8_Click_1(object sender, EventArgs e)
+        {
+            DialogResult TS = MessageBox.Show("是否确认删除'" + comboBox1.Text + "'？","删除？" , MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (TS == DialogResult.Yes)
+            {
+                IniFile iniFile = new IniFile();
+                iniFile.EraseSection(comboBox1.Text);
+                comboBox1.Text = "";
+            }
+            else;
         }
     }
 }

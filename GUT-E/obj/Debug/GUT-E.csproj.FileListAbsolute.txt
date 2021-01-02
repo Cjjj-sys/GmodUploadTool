@@ -1,0 +1,14 @@
+C:\Users\FatPigs\source\repos\GmodUploadTool\GUT-E\bin\Debug\GUT-E.pdb
+C:\Users\FatPigs\source\repos\GmodUploadTool\GUT-E\obj\Debug\MainWindow.g.cs
+C:\Users\FatPigs\source\repos\GmodUploadTool\GUT-E\obj\Debug\GUT-E_MarkupCompile.cache
+C:\Users\FatPigs\source\repos\GmodUploadTool\GUT-E\obj\Debug\GUT-E_MarkupCompile.lref
+C:\Users\FatPigs\source\repos\GmodUploadTool\GUT-E\obj\Debug\MainWindow.baml
+C:\Users\FatPigs\source\repos\GmodUploadTool\GUT-E\obj\Debug\GUT-E.g.resources
+C:\Users\FatPigs\source\repos\GmodUploadTool\GUT-E\obj\Debug\GUT_E.Properties.Resources.resources
+C:\Users\FatPigs\source\repos\GmodUploadTool\GUT-E\obj\Debug\GUT-E.csproj.GenerateResource.cache
+C:\Users\FatPigs\source\repos\GmodUploadTool\GUT-E\obj\Debug\GUT-E.csproj.CoreCompileInputs.cache
+C:\Users\FatPigs\source\repos\GmodUploadTool\GUT-E\obj\Debug\GUT-E.pdb
+C:\Users\FatPigs\source\repos\GmodUploadTool\GUT-E\bin\Debug\GUT-E.dll.config
+C:\Users\FatPigs\source\repos\GmodUploadTool\GUT-E\bin\Debug\GUT-E.dll
+C:\Users\FatPigs\source\repos\GmodUploadTool\GUT-E\obj\Debug\GUT-E.dll
+C:\Users\FatPigs\source\repos\GmodUploadTool\GUT-E\obj\Debug\GUT-E.csprojAssemblyReference.cache
