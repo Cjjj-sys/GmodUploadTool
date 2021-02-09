@@ -1,5 +1,6 @@
 ![GitHub All Releases](https://img.shields.io/github/downloads/Cjjj-sys/GmodUploadTool/total)![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/Cjjj-sys/GmodUploadTool)
 # GmodUploadTool
+My Email Address : ws2005ncsd@outlook.com
 Gmod创意工坊上传器GUI  
 V0.3更新！ 
 保存/读取配置功能[√]
